@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Invertir una cadena con computed object -->
+        <h1>{{ reversarMensaje }}</h1>
+        <input type="text" v-model="textoInput">
+        <h1>{{ inputReversiado }}</h1>
+
+
+        <!-- Tareas -->
+        <textarea cols="10" rows="3" v-model="textoTemporal"></textarea>
+        <button @click="agregarTarea">Agregar Tarea</button>
+
+
+        <h2>Tareas Terminadas</h2>
+        <div v-for="(tarea, index) in tareasTerminadas">
+            <ul>
+                <li>{{ tarea.tarea }}</li>
+                <button @click="tareaPendiente(index)">&#10227;</button> 
+            </ul>
+        </div>
+
+
+
+        <h2>Tareas no Terminadas</h2>
+        <div v-for="(tarea, index) in tareasNoTerminadas">
+            <ul>
+                <li>{{ tarea.tarea }}</li>
+                <button @click="tareaTerminada(index)">&check;</button>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    mensaje: 'hola mundo',
+                    textoInput: '',
+                    textoTemporal:'',
+                    tareas: [],
+                }
+            },
+            methods:{
+              agregarTarea(){
+                this.tareas.push({tarea: this.textoTemporal, terminada:false});
+              },
+
+              tareaTerminada(posicionDeLaTarea){
+                this.tareas[posicionDeLaTarea].terminada = true;
+              },
+              
+              tareaPendiente(posicionDeLaTarea){
+                this.tareas[posicionDeLaTarea].terminada = false;
+              }
+            },
+            computed:{
+                reversarMensaje(){
+                    return this.mensaje.split('').reverse().join('');
+                },
+                inputReversiado(){
+                    return this.textoInput.split('').reverse().join('');
+                },
+
+                tareasTerminadas(){
+                    return this.tareas.filter(tarea => tarea.terminada);
+                },
+                tareasNoTerminadas(){
+                    return this.tareas.filter(tarea => ! tarea.terminada);
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
