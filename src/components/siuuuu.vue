@@ -8,7 +8,7 @@
         <div v-for="(tarea, index) in tareasTerminadas" :key="index">
             <ul>
                 <li>{{ tarea.tarea }}</li>
-                <button @click="tareaPendiente(index)">&#10227;</button> 
+                <button @click="cambiarANoTerminado(tarea.id)">&#10227;</button> 
             </ul>
         </div>
 
@@ -16,7 +16,7 @@
         <div v-for="(tarea, index) in tareasNoTerminadas" :key="index">
             <ul>
                 <li>{{ tarea.tarea }}</li>
-                <button @click="tareaPendiente(index)">&#10227;</button> 
+                <button @click="cambiarATerminado(tarea.id)">&#10227;</button> 
             </ul>
         </div>
     </div>
@@ -25,7 +25,7 @@
 export default {
     data() {
         return {
-            longitudDeTareas: 0,
+            longitudDeTareas: 1,
             tareas: [],
             tarea: '',
         }
@@ -44,9 +44,21 @@ export default {
             this.tareas.push();
         },
         agregarTarea(){
-            let id = this.longitudDeTareas++;
-            this.tareas.push({id: id, tarea: this.tarea, terminada: false});
-        }
+            if(this.tarea!=''){
+                let id = this.longitudDeTareas++;
+                this.tareas.push({id: id, tarea: this.tarea, terminada: false});
+                return;
+            }
+            alert('Se requiere texto de tarea');
+        },
+        cambiarATerminado(id){
+            let tarea = this.tareas.find(tarea => tarea.id == id);
+            tarea.terminada = true;
+        },
+        cambiarANoTerminado(id){
+            let tarea = this.tareas.find(tarea => tarea.id == id);
+            tarea.terminada = false;
+        },
     },
     computed: {
         tareasTerminadas(){
