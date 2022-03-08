@@ -1,12 +1,15 @@
 <script setup>
-import ListaTareas from './components/ListaTareas.vue';
-import ListaChistes from './components/ListaChistes.vue';
+
+import HelloWorld from './components/HelloWorld.vue';
+import InvertirInput from './components/InvertirInput.vue';
+import EmitFunction from './components/EmitFunction.vue';
+import Video9 from './components/video9.vue';
+
 </script>
 
 <template>
-  <div>
-    <ListaChistes />
-  </div>
+    <EmitFunction/>
+    <Video9/>
 </template>
 
 
