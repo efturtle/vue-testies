@@ -13,11 +13,9 @@
         <input type="text" v-model="textoInput">
         <h1>{{ inputReversiado }}</h1>
 
-
         <!-- Tareas -->
         <textarea cols="10" rows="3" v-model="textoTemporal"></textarea>
         <button @click="agregarTarea">Agregar Tarea</button>
-
 
         <h2>Tareas Terminadas</h2>
         <div v-for="(tarea, index) in tareasTerminadas">
@@ -27,8 +25,6 @@
             </ul>
         </div>
 
-
-
         <h2>Tareas no Terminadas</h2>
         <div v-for="(tarea, index) in tareasNoTerminadas">
             <ul>
@@ -36,12 +32,9 @@
                 <button @click="tareaTerminada(index)">&check;</button>
             </ul>
         </div>
-
-
     </div>
 
     <script src="https://unpkg.com/vue@3"></script>
-
     <script>
         Vue.createApp({
             data() {
@@ -60,10 +53,9 @@
               tareaTerminada(posicionDeLaTarea){
                 this.tareas[posicionDeLaTarea].terminada = true;
               },
-              
               tareaPendiente(posicionDeLaTarea){
                 this.tareas[posicionDeLaTarea].terminada = false;
-              }
+              },
             },
             computed:{
                 reversarMensaje(){
