@@ -10,7 +10,6 @@ import Video9 from './components/video9.vue';
 <template>
     <EmitFunction/>
     <Video9/>
-
 </template>
 
 
