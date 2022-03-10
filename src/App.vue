@@ -1,15 +1,16 @@
 <script setup>
-
-import HelloWorld from './components/HelloWorld.vue';
-import InvertirInput from './components/InvertirInput.vue';
-import EmitFunction from './components/EmitFunction.vue';
+import AddACoupon from './components/AddACoupon.vue';
 import Video9 from './components/video9.vue';
-
+import NavBar11 from './components/navBar11.vue';
 </script>
 
 <template>
-    <EmitFunction/>
-    <Video9/>
+  <div>
+    <AddACoupon />
+    <br>
+    <br>
+    <NavBar11 />
+  </div>
 </template>
 
 

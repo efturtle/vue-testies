@@ -1,6 +1,8 @@
 <template>
     <div>
-        <button @click="showModal = true">Dale click</button>
+        <button @click="showModal = true" class="bg-green-700">
+            <span class="text-white">Dale click</span>
+        </button>
         <Modal v-if="showModal" @close="showModal = false"></Modal>
     </div>
 </template>

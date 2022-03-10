@@ -1,17 +1,16 @@
 <template>
    <div class="container"> 
-        <mensaje title="Manny" body="Hola putos"></mensaje>
-         
-</div>
+        <Mensaje9 title="Manny" body="Hola putos"></Mensaje9>
+    </div>
 </template>
 
 <script>
-import mensaje9 from './mensaje9.vue';
+import Mensaje9 from './mensaje9.vue';
 export default {
 
     components:{
-        mensaje
+        Mensaje9
     },
-        
+    
 }
 </script>
