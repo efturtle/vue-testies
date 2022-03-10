@@ -18,6 +18,7 @@ export default {
     data(){
         return{
             chistes: [],
+            
         }
     },
     mounted(){
