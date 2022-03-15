@@ -7,22 +7,24 @@
             </ul>
         </div>
 
-        <div class="tabs-details">
-            <slot> </slot>
+        <div class="tab-details">
+            <slot></slot>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-
+    data(){
+        return{
+            tabs: []
+        }
+    },
     mounted() {
         console.log(this.$children);
     },
-
+    created(){
+        this.tabs=tabs.$children;
+    }
 }
 </script>
-
-<style>
-
-</style>

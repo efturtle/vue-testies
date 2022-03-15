@@ -1,16 +1,13 @@
 <script setup>
-import AddACoupon from './components/AddACoupon.vue';
-import Video9 from './components/video9.vue';
-import NavBar11 from './components/navBar11.vue';
+import tabs from './components/tabs.vue';
+import tab from './components/tab.vue';
+
 </script>
 
 <template>
-  <div>
-    <AddACoupon />
-    <br>
-    <br>
-    <NavBar11 />
-  </div>
+<div>
+  comeme el puto pito Vue
+</div>
 </template>
 
 
